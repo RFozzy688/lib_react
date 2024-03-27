@@ -1,0 +1,46 @@
+.book__content{
+  display: flex;
+  background-color: #FFFFCC;
+  padding: 10px;
+}
+
+.book__header{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  background-color: #CCCC33;
+}
+
+.book__container{
+  width: 1000px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.book__footer{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAEA;
+}
+
+.book__span{
+  font-weight: bold;
+}
+
+.book__img{
+  width: 200px;
+  height: 328px;
+  margin-right: 10px;
+}
+
+.book__decription{
+  height: 215px;
+  overflow: hidden;
+  text-align: justify;
+}
