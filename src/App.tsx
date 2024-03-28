@@ -5,6 +5,8 @@ import { BooksList } from './components/book/BooksList'
 import { Header } from './components/header/Header'
 import { BookSearch } from './components/book-search/BookSearch'
 import { Pagination } from './components/pagination/Pagination'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BookReader } from './components/book/BookReader'
 
 function App() {
 
@@ -54,12 +56,25 @@ function App() {
 
   return (
     <div className='app__content'>
-      <Header/>
-      <BookSearch 
-        onSearchChange={getSearchByAndValue}
-      />
-      <BooksList props={getCurrentItems()} />
-      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+      <Router>
+        <Header/>
+        <Routes>
+          <Route path='/' element={
+            <>
+              <BookSearch onSearchChange={getSearchByAndValue}/>
+              <BooksList props={getCurrentItems()} />
+              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+            </>
+          }/>
+          <Route path='/book/:id' element={<BookReader/>}/>
+        </Routes>
+      </Router>  
+
+      
+          
+
+          
+        
     </div>
   )
 }

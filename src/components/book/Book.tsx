@@ -1,6 +1,7 @@
 import cl from './Book.module.css';
+import { Link } from 'react-router-dom';
 
-export function Book({name, author, description, gener, pages, img, publishing}: any) {
+export function Book({id, name, author, description, gener, pages, img, publishing}: any) {
   return (
     <div>
       <div className={cl.book__container}>
@@ -17,7 +18,10 @@ export function Book({name, author, description, gener, pages, img, publishing}:
           </div>
         </div>
         <div className={cl.book__footer}>
-          <button>Читать книгу</button>
+          <Link to={`/book/${id}`}>
+            <button>Читать книгу</button>
+          </Link>
+          
         </div>
       </div>
     </div>
